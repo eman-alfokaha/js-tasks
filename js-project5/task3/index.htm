@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get" id="form" onchange="Forms()">
+        <select name="" id="font_family">
+            <option value="Arial " selected >Arial </option>
+            <option value="Times New Roman">Times New Roman </option>
+            <option value="Courier New">Courier New</option>
+        </select>
+        <select name="" id="font_Size">
+            <option value="15pt" selected >15pt</option>
+            <option value="20pt">20pt </option>
+            <option value="25pt">25pt</option>
+        </select>
+        <input type="checkbox" id="Bold" name="vehicle1" value="Bike">
+        <label for="Bold"> Bold</label>
+        <input type="checkbox" id="Italic" name="vehicle2" value="Car">
+        <label for="Italic"> Italic</label>
+        <input type="checkbox" id="Underline" name="vehicle3" value="Boat">
+        <label for="Underline"> Underline</label><br><br>
+       <textarea name="" id="personal" cols="45" rows="5"> Hello Every Body My Name Is Lujain, My Age 22 , studied CIS in JUST university</textarea>
+        <br>
+    </form>   
+    <script>
+        function Forms(){
+var y=document.getElementById("font_family");
+switch(y){
+    case "Arial":{
+        document.getElementById("personal").style.fontFamily=y.value;
+        break;}
+    case "Times New Roman":{
+        document.getElementById("personal").style.fontFamily=y.value;
+        break;}
+    case "Courier New":{
+        document.getElementById("personal").style.fontFamily=y.value;
+        break;}
+    default :  document.getElementById("personal").style.fontFamily=y.value;
+
+}
+var z =document.getElementById("font_Size").value;
+switch(z){
+    case "15pt":{
+        document.getElementById("personal").style.fontSize="15pt";
+        break;}
+    case "30pt":{
+        document.getElementById("personal").style.fontSize="30pt";
+        break;}
+    case "50pt":{
+        document.getElementById("personal").style.fontSize="50pt";
+        break;}
+     default :  document.getElementById("personal").style.fontSize="70pt";
+
+}
+var n=document.getElementById("Bold");
+if(n.checked){
+    document.getElementById("personal").style.fontWeight="bold";
+}
+var nn=document.getElementById("Italic");
+if(nn.checked){
+    document.getElementById("personal").style.fontStyle ="italic";
+}
+var nnn=document.getElementById("Underline");
+if(nnn.checked){
+    document.getElementById("personal").style.textDecoration="underline";
+}
+}
+
+    </script>
+</body>
+</html>

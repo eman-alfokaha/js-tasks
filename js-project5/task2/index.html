@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select name="" id="city"  onchange="choice_city()">
+        <option value="Norway" selected >Norway</option>
+        <option value="Canada">Canada</option>
+        <option value="Germany">Germany</option>
+        <option value="US">US</option>
+    </select>
+    <br><br>
+    <br>
+<img id="imges" src="cac72041-6b28-4689-bded-0fad04e0f28d_16x9_600x338.jpg" alt="">
+<script>
+    function choice_city()
+{
+var x=document.getElementById("city").value;
+if(x=="Norway"){
+    document.getElementById("imges").src("cac72041-6b28-4689-bded-0fad04e0f28d_16x9_600x338.jpg");
+}
+else if(x=="Canada")
+{
+    document.getElementById("imges").src="Flag_of_Canada.svg_1.png"; 
+}
+else if(x=="Germany")
+{
+    document.getElementById("imges").src="Flag_of_Germany.svg.png"; 
+}
+else 
+{
+    document.getElementById("imges").src="Flag_of_the_United_States_(1776–1777).svg.png"; 
+}
+
+
+}
+document.getElementById("imges").style.width="340px";
+document.getElementById("imges").style.height="300px";
+
+</script>
+</body>
+</html>

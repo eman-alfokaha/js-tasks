@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" onchange="FormPass()"  >
+        <b>Password(min 6 character):</b> 
+        <input type="password" id="fpas" placeholder="Password1">
+        <p id="mes" ></p>
+        <br> <br><br>
+        <b>Repeat Password:</b> 
+        <input type="password" id="spas" placeholder="Repeat" onchange="sec_pass()" > 
+        <p id="mes2" style="display:none;"></p>
+        <br> <br><br>
+        <input type="submit" id="sub" value="submit" >
+    </form>
+    <script>
+        function FormPass(){
+let x=document.getElementById("fpas").value;
+let y=document.getElementById("spas").value;
+if(x.length<6){
+    document.getElementById("mes").style.display="inline";
+    document.getElementById("mes").innerHTML="Too short";
+    document.getElementById("mes").style.color="red";
+    
+}
+else document.getElementById("mes").style.display="none";
+
+}
+
+
+
+function sec_pass(){
+    let x=document.getElementById("fpas").value;
+let y=document.getElementById("spas").value;
+
+if(x==y){
+    document.getElementById("sub").style.display="block";
+    document.getElementById("mes2").style.display="none";
+    document.getElementById("mes").style.display="none";
+}
+  else {
+    document.getElementById("mes2").style.display="inline";
+    document.getElementById("mes2").innerHTML="The two password don't match";
+    document.getElementById("mes2").style.color="red";
+}
+}
+    </script>
+</body>
+</html>
