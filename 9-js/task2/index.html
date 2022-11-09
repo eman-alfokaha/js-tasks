@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <form action="" method="get">
+        <label for="">Full Name : </label>
+        <input type="text" name="" id="full" onchange="personal_info(this)" style="margin-left:100px;"><br> <br>
+        <label for="">Age : </label>
+        <input type="text" name="" id="age" onchange="personal_info(this)" style="margin-left:190px;"> <br> <br>
+        <label for="">The major & University : </label>
+        <input type="text" name="" id="major" onchange="personal_info(this)" style="margin-left:60px;"><br> <br>
+        <label for="">Description : </label>
+        <textarea name="" id="desc" cols="15" rows="5" placeholder="Brife Description" onchange="personal_info(this)" style="margin-left:150px;"></textarea>
+        <br> <br> <br>
+        <label for="">Gender : </label>
+        <input type="radio" id="female" name="gender" style="margin-left:175px;" onchange="GENDER(this)">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="male" onchange="GENDER(this)">
+        <label for="male">Male</label>
+        <br> <br> <br>
+        <label for="">Languages : </label>
+        <input type="checkbox" id="JS" name="l1" style="margin-left:146px;" onchange="LANG(this)">
+        <label for="JS">Javascript</label>
+        <input type="checkbox" id="CSS" name="l2" onchange="LANG(this)">
+        <label for="CSS">CSS</label>
+        <input type="checkbox" id="HTML" name="l3" onchange="LANG(this)">
+        <label for="HTML">HTML</label>
+        <br> <br> <br>
+    
+    </form>
+    <button onclick="Submit()" id="sub" style="margin-left:100px; background-color: rgb(220, 19, 19); width:120px; height:80px;">Submit</button>
+    <br><br>
+    <div style="display: none;" id="div">
+        <span>FULL NAME : </span>
+        <span id="full_name"></span> <br>
+        <span>AGE :  </span>
+        <span id="agee"></span><br>
+        <span>MAJOR  :  </span>
+        <span id="maj"></span><br>
+        <span>DESXCRIPTION : </span>
+        <span id="des"></span><br>
+        <span>GENDER : </span>
+        <span id="gen"></span><br>
+        <span>LANGUAGES : </span>
+        <span id="la1"></span>
+        <span id="la2"></span>
+        <span id="la3"></span>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
