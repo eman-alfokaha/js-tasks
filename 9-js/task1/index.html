@@ -1,30 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Session Storage</title>
+
 </head>
+<style>
+    body{
+        font-size: 20px;
+
+    }
+      .con{
+            display: flex;
+            flex-direction: row;
+        }
+</style>
 <body>
-    <h1>Master Beast</h1>
-    <span style="background-color:rgb(188, 143, 176); font-weight: bold;">Subject :</span>
-    <span id="sub" style="margin-left:10px;"></span> <br> <br>
-    <span style="background-color:rgb(181, 143, 188); font-weight: bold;">Description :</span>
-    <p id="desc" style="margin-left:10px;"></p>
-    <span style="background-color:rgb(188, 143, 180); font-weight: bold;">Technologies :</span>
-    <ul id="technologies" style="margin-left:10px;">
-        <li id="JS">JavaScript</li>
-        <li id="CSS">CSS</li>
-        <li id="HTML">HTML</li>
-    </ul>
-    <span style="background-color:rgb(186, 143, 188); font-weight: bold;">User Types :</span>
-    <ul id="user" style="margin-left:10px;">
-        <li id="prov"></li>
-        <li id="RU"></li>
-        <li id="Comp"></li>
-    </ul>
+    <form>
+     
+
+        <div class="con">
+
+            <div>
+                <label for="subj" >Subject:</label><br><br>
+                <label for="desc" > Description:</label><br><br><br><br>
+                <label> User Types :</label><br><br>
+                <label> Technology used :</label>
+
+            </div>
+
+            <div>
+     <input type="text" id="subj" ><br><br>
+     <textarea id="desc" name="desc"  rows="4" cols="50"></textarea> <br><br>
+     <input type="checkbox" id="client" name="client" value="client">
+     <label for="client"> Client</label>
+     <input type="checkbox" id="admain" name="admain" value="admain">
+     <label for="admain"> Admain</label><br><br>
+     <input type="checkbox" id="html" name="html" value="html">
+     <label for="html"> Html</label>
+     <input type="checkbox" id="css" name="css" value="css">
+     <label for="css"> CSS</label>
+     <input type="checkbox" id="js" name="js" value="js">
+     <label for="js"> Java Script</label>
+     <input type="checkbox" id="asp.net" name="asp.net" value="asp.net">
+     <label for="asp.net"> Asp.Net</label><br>
+
+            </div>
+
+        </div>
+    </form><br>
+    <button onclick="showCard()">Submit</button><br>
+
+    <div id="card" style="display: none;" >
+        <labe> Subject :</labe>
+        <span id="sub"></span><br>
+        <labe> Description :</labe>
+        <span id="des"></span><br>
+        <labe> User Types:</labe>
+        <span id="uType"></span><br>
+        <labe> Technology used:</labe>
+        <span id="techno"></span><br>
+       
     
-    <script src="master.js"></script>
+    </div>
+    
+    <script>
+function showCard() {
+    document.getElementById('card').style.display="block";
+    document.getElementById('card').style.background="GREEN";
+
+
+    let Sname=document.getElementById("subj").value;
+    window.sessionStorage.setItem("Subject",Sname);
+    window.sessionStorage.getItem("Subject");
+    document.getElementById("sub").innerHTML+=Sname;
+
+
+    let Des=document.getElementById("desc").value;
+    window.sessionStorage.setItem("Description",Des);
+    window.sessionStorage.getItem('Description');
+    document.getElementById("des").innerHTML+=Des;
+
+
+     let users=""
+     if (document.getElementById("client").checked) {
+        users+=document.getElementById("client").value;
+     }
+     if(document.getElementById("admain").checked){
+        users+=document.getElementById("admain").value;
+     }
+    
+     
+     window.sessionStorage.setItem("UserTypes",users);
+
+    window.sessionStorage.getItem('UserTypes');
+    document.getElementById("uType").innerHTML+=users;
+
+     
+    let tec=""
+    if (document.getElementById("html").checked) {
+        tec+=document.getElementById("html").value;
+    }
+    if(document.getElementById("css").checked){
+        tec+=document.getElementById("css").value;
+    }
+    if(document.getElementById("js").checked){
+        tec+=document.getElementById("js").value;
+    }
+    if(document.getElementById("asp.net").checked){
+        tec+=document.getElementById("asp.net").value;
+    }
+    window.sessionStorage.setItem("TechnologyUsed",tec);
+
+    window.sessionStorage.getItem('TechnologyUsed');
+   document.getElementById("techno").innerHTML+=tec;
+    
+}
+
+    </script>
+
 </body>
 </html>
