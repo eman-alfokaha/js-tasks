@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ 
+</style>
+<body>
+      <select onchange="InfoOfUsers() ">
+
+</select>
+<br>
+<img src="" alt="" id="img">
+<p id="name"></p>
+    <script  >
+        async function getdata (){
+    const res= await fetch("https://www.breakingbadapi.com/api/characters " );
+    
+
+    var data = await res.json();
+    console.log(data)
+    for (var i=0;i<data.length;i++)
+    {
+        var option= new Option (data[i].name,data[i].img);
+        const select = document.querySelector('select'); 
+        select.add(option);
+    
+    }
+    
+   
+}
+getdata();
+
+function InfoOfUsers() {
+    const select = document.querySelector('select').value; 
+    document.getElementById("img").src=select;
+}
+
+    </script>
+</body>
+</html>
